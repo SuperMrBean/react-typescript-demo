@@ -17,7 +17,6 @@ const initialState: AppModel = {
 
 export const toggleSideBarReducer = handleActions<AppModel>({
   [TOGGLE_SIDE_BAR]: (state:any, action:any) => {
-    console.log(state)
     return {
       ...state,
       collapsed: !state.collapsed

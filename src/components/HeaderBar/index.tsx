@@ -2,7 +2,7 @@ import React,{Component} from 'react';
 import {connect} from 'react-redux';
 import {toggleSideBar} from '../../store/actions';
 import { Layout,Icon} from 'antd';
-import './index.less';
+import { relativeTimeThreshold } from 'moment';
 const { Header } = Layout
 interface propsModel {
   toggleSideBar?: any;
@@ -14,10 +14,10 @@ class HeaderBar extends Component<propsModel> {
   };
   render() {
       return (
-        <Header style={{ background: '#fff', padding: 0 }} id="headerbar">
+        <Header className='header' style={{ background: '#fff', padding: 0,  position: 'fixed', zIndex: 1,width:'100%',height:'68px',marginLeft: this.props.collapsed ?'80px':'200px',transition:'all .2s'}} id="headerbar">
           <div className="logo" />
         <Icon
-          className="trigger"
+          style={{  fontSize:"18px",lineHeight:"64px",padding:"0 24px",cursor:"pointer",transition:"color 0.3s"}}
           type={this.props.collapsed ? 'menu-unfold' : 'menu-fold'}
           onClick={this.toggle}
         />

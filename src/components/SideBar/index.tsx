@@ -2,7 +2,6 @@ import React,{Component} from 'react'
 import { Layout,Menu,Icon } from 'antd';
 import {Link,withRouter,RouteComponentProps} from 'react-router-dom';
 import {connect} from 'react-redux';
-import './index.less'
 const { SubMenu }  = Menu;
 const { Sider  } = Layout
 interface propsModel extends RouteComponentProps {
@@ -14,8 +13,8 @@ class SideBar extends Component<propsModel> {
   }
   render() {
       return (
-        <Sider trigger={null} collapsible collapsed={this.props.collapsed} style={{height:"100vh",minHeight:"700px"}} id="sidebar">
-          <div className="logo" />
+        <Sider trigger={null} collapsible collapsed={this.props.collapsed} style={{height:"100vh",minHeight:"700px",position:"fixed",overflow: 'auto',left:0}} id="sidebar">
+          <div style={{  height:"32px",background:"#333",margin:"16px"}}/>
           <Menu theme="dark" mode="inline" selectedKeys={[this.props.location.pathname === '/' ? 'home' : this.props.location.pathname.replace('/','')]}>
             <Menu.Item key="home">
               <Icon type="home" />

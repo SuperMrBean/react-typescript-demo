@@ -8,7 +8,7 @@ interface propsModel extends FormComponentProps {
 }
 class LoginForm extends Component<propsModel> {
   componentWillMount(){
-    console.log(this.props.history)
+    // console.log(this.props.history)
   }
   handleLogin=(e:any)=>{
     e.preventDefault()
